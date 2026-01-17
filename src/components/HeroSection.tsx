@@ -1,0 +1,74 @@
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-registan.jpg";
+
+export function HeroSection() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Registan Square in Samarkand, Uzbekistan at golden hour"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/80" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-4xl mx-auto"
+        >
+          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider uppercase bg-accent/20 text-accent rounded-full border border-accent/30">
+            Private Tours in Uzbekistan
+          </span>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-primary-foreground leading-tight mb-6">
+            Discover the Ancient{" "}
+            <span className="text-accent italic">Heart</span> of the Silk Road
+          </h1>
+          
+          <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Experience the timeless beauty of Uzbekistan with personalized, 
+            premium tours crafted by local experts. From Samarkand's majestic 
+            architecture to Bukhara's ancient streets.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/multi-day-tours">
+                Explore Tours
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="heroOutline" size="lg" asChild>
+              <Link to="/contact">Plan Your Journey</Link>
+            </Button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="w-6 h-10 rounded-full border-2 border-primary-foreground/40 flex items-start justify-center p-2"
+        >
+          <motion.div className="w-1.5 h-1.5 rounded-full bg-accent" />
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+}
