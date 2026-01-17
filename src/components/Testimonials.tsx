@@ -1,28 +1,50 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Sarah Mitchell",
-    country: "United Kingdom",
-    text: "JamTrips made our Uzbekistan adventure absolutely magical. Our guide's knowledge of Samarkand was incredible – we felt like we were traveling back in time.",
-    rating: 5,
-  },
-  {
-    name: "Thomas Weber",
-    country: "Germany",
-    text: "Professional, punctual, and passionate about sharing their culture. The multi-day tour exceeded all our expectations. Highly recommended!",
-    rating: 5,
-  },
-  {
-    name: "Elena Rossi",
-    country: "Italy",
-    text: "From the comfortable transfers to the knowledgeable guides, everything was perfect. Bukhara at sunset will stay with me forever.",
-    rating: 5,
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Testimonials() {
+  const { t, language } = useLanguage();
+
+  const testimonials = language === "ru" ? [
+    {
+      name: "Сара Митчелл",
+      country: "Великобритания",
+      text: "JamTrips сделали наше путешествие по Узбекистану абсолютно волшебным. Знания нашего гида о Самарканде были невероятными – мы чувствовали себя путешественниками во времени.",
+      rating: 5,
+    },
+    {
+      name: "Томас Вебер",
+      country: "Германия",
+      text: "Профессионально, пунктуально и с любовью к своей культуре. Многодневный тур превзошёл все наши ожидания. Настоятельно рекомендую!",
+      rating: 5,
+    },
+    {
+      name: "Елена Росси",
+      country: "Италия",
+      text: "От комфортных трансферов до знающих гидов – всё было идеально. Бухара на закате останется со мной навсегда.",
+      rating: 5,
+    },
+  ] : [
+    {
+      name: "Sarah Mitchell",
+      country: "United Kingdom",
+      text: "JamTrips made our Uzbekistan adventure absolutely magical. Our guide's knowledge of Samarkand was incredible – we felt like we were traveling back in time.",
+      rating: 5,
+    },
+    {
+      name: "Thomas Weber",
+      country: "Germany",
+      text: "Professional, punctual, and passionate about sharing their culture. The multi-day tour exceeded all our expectations. Highly recommended!",
+      rating: 5,
+    },
+    {
+      name: "Elena Rossi",
+      country: "Italy",
+      text: "From the comfortable transfers to the knowledgeable guides, everything was perfect. Bukhara at sunset will stay with me forever.",
+      rating: 5,
+    },
+  ];
+
   return (
     <section className="section-padding bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,14 +56,13 @@ export function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-medium tracking-wider uppercase text-accent">
-            Testimonials
+            {t("testimonials.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold mt-3 mb-6">
-            What Our Guests Say
+            {t("testimonials.title")}
           </h2>
           <p className="text-primary-foreground/80 text-lg leading-relaxed">
-            Join hundreds of satisfied travelers who discovered 
-            Uzbekistan with JamTrips.
+            {t("testimonials.description")}
           </p>
         </motion.div>
 

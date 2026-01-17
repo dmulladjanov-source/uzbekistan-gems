@@ -1,40 +1,43 @@
 import { motion } from "framer-motion";
 import { TourCard } from "./TourCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import tourSamarkand from "@/assets/tour-samarkand.jpg";
 import tourBukhara from "@/assets/tour-bukhara.jpg";
 import tourKhiva from "@/assets/tour-khiva.jpg";
 
-const tours = [
-  {
-    image: tourSamarkand,
-    title: "Samarkand: The Jewel of the Silk Road",
-    location: "Samarkand",
-    duration: "Full Day (8-10 hours)",
-    groupSize: "Private Tour",
-    price: "$120",
-    href: "/day-trips",
-  },
-  {
-    image: tourBukhara,
-    title: "Ancient Bukhara Walking Tour",
-    location: "Bukhara",
-    duration: "Full Day (6-8 hours)",
-    groupSize: "Private Tour",
-    price: "$95",
-    href: "/day-trips",
-  },
-  {
-    image: tourKhiva,
-    title: "Khiva: The Museum City",
-    location: "Khiva",
-    duration: "Full Day (5-7 hours)",
-    groupSize: "Private Tour",
-    price: "$85",
-    href: "/day-trips",
-  },
-];
-
 export function TopTours() {
+  const { t, language } = useLanguage();
+
+  const tours = [
+    {
+      image: tourSamarkand,
+      title: language === "ru" ? "Самарканд: Жемчужина Шёлкового пути" : "Samarkand: The Jewel of the Silk Road",
+      location: t("city.samarkand"),
+      duration: language === "ru" ? "Полный день (8-10 часов)" : "Full Day (8-10 hours)",
+      groupSize: t("tours.privateTour"),
+      price: "$120",
+      href: "/day-trips",
+    },
+    {
+      image: tourBukhara,
+      title: language === "ru" ? "Древняя Бухара: Пешая прогулка" : "Ancient Bukhara Walking Tour",
+      location: t("city.bukhara"),
+      duration: language === "ru" ? "Полный день (6-8 часов)" : "Full Day (6-8 hours)",
+      groupSize: t("tours.privateTour"),
+      price: "$95",
+      href: "/day-trips",
+    },
+    {
+      image: tourKhiva,
+      title: language === "ru" ? "Хива: Город-музей" : "Khiva: The Museum City",
+      location: t("city.khiva"),
+      duration: language === "ru" ? "Полный день (5-7 часов)" : "Full Day (5-7 hours)",
+      groupSize: t("tours.privateTour"),
+      price: "$85",
+      href: "/day-trips",
+    },
+  ];
+
   return (
     <section className="section-padding bg-sand-light">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,14 +49,13 @@ export function TopTours() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-medium tracking-wider uppercase text-accent">
-            Popular Experiences
+            {t("tours.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-foreground mt-3 mb-6">
-            Our Top Tours
+            {t("tours.title")}
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Handcrafted itineraries designed to immerse you in Uzbekistan's 
-            rich history, stunning architecture, and warm hospitality.
+            {t("tours.description")}
           </p>
         </motion.div>
 

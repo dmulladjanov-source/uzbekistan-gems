@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, Users, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TourCardProps {
   image: string;
@@ -23,6 +24,8 @@ export function TourCard({
   href,
   index = 0,
 }: TourCardProps) {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -43,7 +46,7 @@ export function TourCard({
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">
               <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase bg-accent text-accent-foreground rounded-full">
-                From {price}
+                {t("tours.from")} {price}
               </span>
             </div>
           </div>
@@ -70,7 +73,7 @@ export function TourCard({
             </div>
 
             <div className="flex items-center text-primary font-medium text-sm group-hover:text-accent transition-colors">
-              View Details
+              {t("tours.viewDetails")}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </div>
           </div>

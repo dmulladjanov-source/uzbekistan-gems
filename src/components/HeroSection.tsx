@@ -2,9 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-registan.jpg";
 
 export function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -26,29 +29,28 @@ export function HeroSection() {
           className="max-w-4xl mx-auto"
         >
           <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider uppercase bg-accent/20 text-accent rounded-full border border-accent/30">
-            Private Tours in Uzbekistan
+            {t("hero.badge")}
           </span>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-primary-foreground leading-tight mb-6">
-            Discover the Ancient{" "}
-            <span className="text-accent italic">Heart</span> of the Silk Road
+            {t("hero.title")}{" "}
+            <span className="text-accent italic">{t("hero.titleAccent")}</span>{" "}
+            {t("hero.titleEnd")}
           </h1>
           
           <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Experience the timeless beauty of Uzbekistan with personalized, 
-            premium tours crafted by local experts. From Samarkand's majestic 
-            architecture to Bukhara's ancient streets.
+            {t("hero.description")}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="hero" size="lg" asChild>
               <Link to="/multi-day-tours">
-                Explore Tours
+                {t("hero.exploreTours")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
-              <Link to="/contact">Plan Your Journey</Link>
+              <Link to="/contact">{t("hero.planJourney")}</Link>
             </Button>
           </div>
         </motion.div>

@@ -1,46 +1,43 @@
 import { motion } from "framer-motion";
 import { Shield, Heart, Users, Award, Clock, Headphones } from "lucide-react";
-
-const features = [
-  {
-    icon: Heart,
-    title: "Local Expertise",
-    description:
-      "Our guides are born and raised in Uzbekistan, offering authentic insights and hidden gems.",
-  },
-  {
-    icon: Shield,
-    title: "Safe & Reliable",
-    description:
-      "Licensed operators with a perfect safety record and comprehensive travel insurance.",
-  },
-  {
-    icon: Users,
-    title: "Private Tours",
-    description:
-      "Personalized experiences tailored to your interests, pace, and travel style.",
-  },
-  {
-    icon: Award,
-    title: "Premium Quality",
-    description:
-      "Handpicked hotels, comfortable vehicles, and exceptional service standards.",
-  },
-  {
-    icon: Clock,
-    title: "Flexible Scheduling",
-    description:
-      "Tours that adapt to your timeline. Early morning, evening, or custom timings.",
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description:
-      "Round-the-clock assistance throughout your journey in Uzbekistan.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function WhyChooseUs() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Heart,
+      title: t("why.localExpertise"),
+      description: t("why.localExpertiseDesc"),
+    },
+    {
+      icon: Shield,
+      title: t("why.safeReliable"),
+      description: t("why.safeReliableDesc"),
+    },
+    {
+      icon: Users,
+      title: t("why.privateTours"),
+      description: t("why.privateToursDesc"),
+    },
+    {
+      icon: Award,
+      title: t("why.premiumQuality"),
+      description: t("why.premiumQualityDesc"),
+    },
+    {
+      icon: Clock,
+      title: t("why.flexibleScheduling"),
+      description: t("why.flexibleSchedulingDesc"),
+    },
+    {
+      icon: Headphones,
+      title: t("why.support"),
+      description: t("why.supportDesc"),
+    },
+  ];
+
   return (
     <section className="section-padding bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,14 +49,13 @@ export function WhyChooseUs() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-medium tracking-wider uppercase text-accent">
-            The JamTrips Difference
+            {t("why.badge")}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-foreground mt-3 mb-6">
-            Why Choose Us
+            {t("why.title")}
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We don't just show you Uzbekistan – we help you feel it. 
-            Every journey is crafted with passion and attention to detail.
+            {t("why.description")}
           </p>
         </motion.div>
 
