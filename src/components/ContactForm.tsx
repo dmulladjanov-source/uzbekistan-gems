@@ -4,6 +4,7 @@ import { Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -20,6 +21,7 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ variant = "default" }: ContactFormProps) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -90,14 +92,13 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
             className="text-center mb-12"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Start Your Journey
+              {t("contact.badge")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Get in Touch
+              {t("contact.title")}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Ready to explore Uzbekistan? Send us a message and we'll help 
-              craft your perfect itinerary.
+              {t("contact.description")}
             </p>
           </motion.div>
 
@@ -117,7 +118,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
               >
                 <CheckCircle className="h-5 w-5" />
                 <span className="font-medium">
-                  Thank you! We'll respond within 24 hours.
+                  {t("contact.success")}
                 </span>
               </motion.div>
             )}
@@ -128,7 +129,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   htmlFor="name"
                   className="text-sm font-medium text-card-foreground"
                 >
-                  Your Name *
+                  {t("contact.name")} *
                 </label>
                 <Input
                   id="name"
@@ -148,7 +149,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   htmlFor="email"
                   className="text-sm font-medium text-card-foreground"
                 >
-                  Email Address *
+                  {t("contact.email")} *
                 </label>
                 <Input
                   id="email"
@@ -170,7 +171,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                 htmlFor="phone"
                 className="text-sm font-medium text-card-foreground"
               >
-                Phone Number (optional)
+                {t("contact.phone")}
               </label>
               <Input
                 id="phone"
@@ -187,14 +188,14 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                 htmlFor="message"
                 className="text-sm font-medium text-card-foreground"
               >
-                Your Message *
+                {t("contact.message")} *
               </label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about your travel plans, preferred dates, group size..."
+                placeholder={t("contact.messagePlaceholder")}
                 rows={5}
                 className={errors.message ? "border-destructive" : ""}
               />
@@ -205,11 +206,11 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
 
             <Button type="submit" variant="premium" size="lg" className="w-full">
               <Send className="mr-2 h-5 w-5" />
-              Send via Telegram
+              {t("contact.send")}
             </Button>
 
             <p className="text-sm text-muted-foreground text-center">
-              Or contact us directly on{" "}
+              {t("contact.telegramDirect")}{" "}
               <a
                 href="https://t.me/jamtrips"
                 target="_blank"
