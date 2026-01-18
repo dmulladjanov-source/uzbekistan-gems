@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { ContactForm } from "@/components/ContactForm";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <Layout>
       {/* Hero */}
@@ -16,14 +19,13 @@ const Contact = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Let's Connect
+              {t("contactPage.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Contact Us
+              {t("contactPage.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Ready to start planning your Uzbekistan adventure? We're here to 
-              help create your perfect journey.
+              {t("contactPage.description")}
             </p>
           </motion.div>
         </div>
@@ -44,9 +46,9 @@ const Contact = () => {
                 <MapPin className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-serif font-semibold mb-1">Location</h3>
+                <h3 className="font-serif font-semibold mb-1">{t("contactPage.location")}</h3>
                 <p className="text-primary-foreground/70 text-sm">
-                  Tashkent, Uzbekistan
+                  {t("city.tashkent")}, Uzbekistan
                 </p>
               </div>
             </motion.div>
@@ -62,12 +64,12 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-serif font-semibold mb-1">Phone</h3>
+                <h3 className="font-serif font-semibold mb-1">{t("contactPage.phone")}</h3>
                 <a
-                  href="tel:+998901234567"
+                  href="tel:+998990152110"
                   className="text-primary-foreground/70 text-sm hover:text-accent transition-colors"
                 >
-                  +998 90 123 45 67
+                  +998 99 015 21 10
                 </a>
               </div>
             </motion.div>
@@ -83,7 +85,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-serif font-semibold mb-1">Email</h3>
+                <h3 className="font-serif font-semibold mb-1">{t("contactPage.email")}</h3>
                 <a
                   href="mailto:info@jamtrips.com"
                   className="text-primary-foreground/70 text-sm hover:text-accent transition-colors"
@@ -104,9 +106,9 @@ const Contact = () => {
                 <Clock className="h-6 w-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-serif font-semibold mb-1">Hours</h3>
+                <h3 className="font-serif font-semibold mb-1">{t("contactPage.hours")}</h3>
                 <p className="text-primary-foreground/70 text-sm">
-                  Mon-Sat: 9AM - 6PM (UTC+5)
+                  {t("contactPage.hoursValue")}
                 </p>
               </div>
             </motion.div>
@@ -131,20 +133,19 @@ const Contact = () => {
               <Send className="h-8 w-8 text-accent" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-foreground mb-4">
-              Prefer Instant Messaging?
+              {t("contactPage.telegramTitle")}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Reach us directly on Telegram for quick responses and real-time 
-              travel planning assistance.
+              {t("contactPage.telegramDesc")}
             </p>
             <a
-              href="https://t.me/jamtrips"
+              href="https://t.me/+998990152110"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors shadow-soft"
             >
               <Send className="mr-2 h-5 w-5" />
-              Message Us on Telegram
+              {t("contactPage.telegramBtn")}
             </a>
           </motion.div>
         </div>

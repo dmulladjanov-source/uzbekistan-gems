@@ -1,36 +1,42 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { Heart, Award, Users, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import tourBukhara from "@/assets/tour-bukhara.jpg";
 
-const values = [
-  {
-    icon: Heart,
-    title: "Passion for Our Heritage",
-    description:
-      "We're not just guides – we're storytellers deeply connected to Uzbekistan's rich history and culture.",
-  },
-  {
-    icon: Award,
-    title: "Excellence in Service",
-    description:
-      "Every detail matters. From accommodation to transportation, we ensure premium quality at every step.",
-  },
-  {
-    icon: Users,
-    title: "Personal Connections",
-    description:
-      "We believe travel is about people. Our small group approach means meaningful interactions and lasting memories.",
-  },
-  {
-    icon: Globe,
-    title: "Responsible Tourism",
-    description:
-      "We work with local communities, support artisan traditions, and promote sustainable travel practices.",
-  },
-];
-
 const About = () => {
+  const { t } = useLanguage();
+
+  const values = [
+    {
+      icon: Heart,
+      title: t("about.value1.title"),
+      description: t("about.value1.desc"),
+    },
+    {
+      icon: Award,
+      title: t("about.value2.title"),
+      description: t("about.value2.desc"),
+    },
+    {
+      icon: Users,
+      title: t("about.value3.title"),
+      description: t("about.value3.desc"),
+    },
+    {
+      icon: Globe,
+      title: t("about.value4.title"),
+      description: t("about.value4.desc"),
+    },
+  ];
+
+  const stats = [
+    { number: "500+", label: t("about.stat1") },
+    { number: "50+", label: t("about.stat2") },
+    { number: "5", label: t("about.stat3") },
+    { number: "100%", label: t("about.stat4") },
+  ];
+
   return (
     <Layout>
       {/* Hero */}
@@ -43,14 +49,13 @@ const About = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Our Story
+              {t("about.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              About JamTrips
+              {t("about.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Born from a love for Uzbekistan and a passion for sharing its 
-              wonders with the world.
+              {t("about.description")}
             </p>
           </motion.div>
         </div>
@@ -81,25 +86,16 @@ const About = () => {
               className="space-y-6"
             >
               <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-foreground">
-                Where Silk Road Dreams Come True
+                {t("about.storyTitle")}
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                JamTrips was founded by a team of passionate Uzbek travel 
-                professionals who grew up wandering the ancient streets of 
-                Samarkand and Bukhara. We understand that visiting Uzbekistan 
-                is more than just a trip – it's a journey through time.
+                {t("about.storyP1")}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our mission is simple: to share the real Uzbekistan with 
-                travelers from around the world. Not just the monuments and 
-                mosques, but the stories behind them. The warm hospitality of 
-                our people. The flavors of our cuisine. The artistry that has 
-                been passed down through generations.
+                {t("about.storyP2")}
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                With years of experience and countless happy travelers, we've 
-                refined our approach to create journeys that are authentic, 
-                comfortable, and unforgettable.
+                {t("about.storyP3")}
               </p>
             </motion.div>
           </div>
@@ -117,11 +113,10 @@ const About = () => {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6">
-              Our Values
+              {t("about.valuesTitle")}
             </h2>
             <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              These principles guide everything we do, from planning your 
-              itinerary to welcoming you home.
+              {t("about.valuesDesc")}
             </p>
           </motion.div>
 
@@ -154,12 +149,7 @@ const About = () => {
       <section className="section-padding bg-sand-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "500+", label: "Happy Travelers" },
-              { number: "50+", label: "Unique Itineraries" },
-              { number: "5", label: "Years of Experience" },
-              { number: "100%", label: "Satisfaction Rate" },
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}

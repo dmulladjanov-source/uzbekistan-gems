@@ -1,61 +1,64 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { TourCard } from "@/components/TourCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import tourSamarkand from "@/assets/tour-samarkand.jpg";
 import tourBukhara from "@/assets/tour-bukhara.jpg";
 import tourKhiva from "@/assets/tour-khiva.jpg";
 import tourTashkent from "@/assets/tour-tashkent.jpg";
 import tourShahrisabz from "@/assets/tour-shahrisabz.jpg";
 
-const dayTrips = [
-  {
-    image: tourSamarkand,
-    title: "Samarkand: The Jewel of the Silk Road",
-    location: "Samarkand",
-    duration: "Full Day (8-10 hours)",
-    groupSize: "Private Tour",
-    price: "$120",
-    href: "/contact",
-  },
-  {
-    image: tourBukhara,
-    title: "Ancient Bukhara Walking Tour",
-    location: "Bukhara",
-    duration: "Full Day (6-8 hours)",
-    groupSize: "Private Tour",
-    price: "$95",
-    href: "/contact",
-  },
-  {
-    image: tourKhiva,
-    title: "Khiva: The Museum City",
-    location: "Khiva",
-    duration: "Full Day (5-7 hours)",
-    groupSize: "Private Tour",
-    price: "$85",
-    href: "/contact",
-  },
-  {
-    image: tourTashkent,
-    title: "Tashkent City Discovery",
-    location: "Tashkent",
-    duration: "Half Day (4-5 hours)",
-    groupSize: "Private Tour",
-    price: "$65",
-    href: "/contact",
-  },
-  {
-    image: tourShahrisabz,
-    title: "Shahrisabz: Birthplace of Timur",
-    location: "Shahrisabz",
-    duration: "Full Day (7-8 hours)",
-    groupSize: "Private Tour",
-    price: "$110",
-    href: "/contact",
-  },
-];
-
 const DayTrips = () => {
+  const { t } = useLanguage();
+
+  const dayTrips = [
+    {
+      image: tourSamarkand,
+      title: t("dayTrips.samarkand.title"),
+      location: t("city.samarkand"),
+      duration: t("dayTrips.samarkand.duration"),
+      groupSize: t("tours.privateTour"),
+      price: "$120",
+      href: "/contact",
+    },
+    {
+      image: tourBukhara,
+      title: t("dayTrips.bukhara.title"),
+      location: t("city.bukhara"),
+      duration: t("dayTrips.bukhara.duration"),
+      groupSize: t("tours.privateTour"),
+      price: "$95",
+      href: "/contact",
+    },
+    {
+      image: tourKhiva,
+      title: t("dayTrips.khiva.title"),
+      location: t("city.khiva"),
+      duration: t("dayTrips.khiva.duration"),
+      groupSize: t("tours.privateTour"),
+      price: "$85",
+      href: "/contact",
+    },
+    {
+      image: tourTashkent,
+      title: t("dayTrips.tashkent.title"),
+      location: t("city.tashkent"),
+      duration: t("dayTrips.tashkent.duration"),
+      groupSize: t("tours.privateTour"),
+      price: "$65",
+      href: "/contact",
+    },
+    {
+      image: tourShahrisabz,
+      title: t("dayTrips.shahrisabz.title"),
+      location: t("city.shahrisabz"),
+      duration: t("dayTrips.shahrisabz.duration"),
+      groupSize: t("tours.privateTour"),
+      price: "$110",
+      href: "/contact",
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero */}
@@ -68,14 +71,13 @@ const DayTrips = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              One-Day Experiences
+              {t("dayTrips.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Day Trips
+              {t("dayTrips.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Perfect for travelers with limited time. Explore Uzbekistan's 
-              UNESCO World Heritage sites with our expertly guided day excursions.
+              {t("dayTrips.description")}
             </p>
           </motion.div>
         </div>

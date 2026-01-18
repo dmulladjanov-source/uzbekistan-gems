@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const reviews = [
   {
@@ -54,6 +55,8 @@ const reviews = [
 ];
 
 const Reviews = () => {
+  const { t } = useLanguage();
+
   return (
     <Layout>
       {/* Hero */}
@@ -66,14 +69,13 @@ const Reviews = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Guest Experiences
+              {t("reviews.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Reviews
+              {t("reviews.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Don't just take our word for it. Here's what travelers from around 
-              the world say about their JamTrips experience.
+              {t("reviews.description")}
             </p>
           </motion.div>
         </div>
@@ -90,16 +92,15 @@ const Reviews = () => {
                   <Star key={i} className="h-6 w-6 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-primary-foreground/70">Based on 150+ reviews</p>
+              <p className="text-primary-foreground/70">{t("reviews.basedOn")}</p>
             </div>
             <div className="w-px h-20 bg-primary-foreground/20 hidden md:block" />
             <div className="text-center md:text-left">
               <p className="text-2xl font-serif font-semibold mb-2">
-                "Exceptional in every way"
+                "{t("reviews.exceptional")}"
               </p>
               <p className="text-primary-foreground/70">
-                Our guests consistently rate us 5 stars for service, 
-                knowledge, and overall experience.
+                {t("reviews.exceptionalDesc")}
               </p>
             </div>
           </div>

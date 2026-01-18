@@ -3,41 +3,44 @@ import { Layout } from "@/components/Layout";
 import { Car, Plane, Train, Users, Clock, Shield, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const transferTypes = [
-  {
-    icon: Plane,
-    title: "Airport Transfers",
-    description: "Seamless pickup and drop-off at all major Uzbekistan airports.",
-    features: ["Meet & greet service", "Flight tracking", "24/7 availability"],
-    price: "From $25",
-  },
-  {
-    icon: Car,
-    title: "City-to-City Transfers",
-    description: "Comfortable private transfers between Uzbekistan's legendary cities.",
-    features: ["Air-conditioned vehicles", "Professional drivers", "Flexible scheduling"],
-    price: "From $80",
-  },
-  {
-    icon: Train,
-    title: "Train Station Transfers",
-    description: "Convenient connections to and from Uzbekistan's modern railway stations.",
-    features: ["Afrosiyob high-speed train connections", "Luggage assistance", "On-time guarantee"],
-    price: "From $20",
-  },
-];
-
-const routes = [
-  { from: "Tashkent", to: "Samarkand", duration: "4 hours", price: "$120" },
-  { from: "Samarkand", to: "Bukhara", duration: "3.5 hours", price: "$100" },
-  { from: "Bukhara", to: "Khiva", duration: "6 hours", price: "$180" },
-  { from: "Tashkent", to: "Bukhara", duration: "6 hours", price: "$200" },
-  { from: "Tashkent Airport", to: "City Center", duration: "30 min", price: "$25" },
-  { from: "Samarkand Airport", to: "City Center", duration: "20 min", price: "$20" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Transfers = () => {
+  const { t } = useLanguage();
+
+  const transferTypes = [
+    {
+      icon: Plane,
+      title: t("transfers.airport.title"),
+      description: t("transfers.airport.desc"),
+      features: [t("transfers.airport.f1"), t("transfers.airport.f2"), t("transfers.airport.f3")],
+      price: t("tours.from") + " $25",
+    },
+    {
+      icon: Car,
+      title: t("transfers.city.title"),
+      description: t("transfers.city.desc"),
+      features: [t("transfers.city.f1"), t("transfers.city.f2"), t("transfers.city.f3")],
+      price: t("tours.from") + " $80",
+    },
+    {
+      icon: Train,
+      title: t("transfers.train.title"),
+      description: t("transfers.train.desc"),
+      features: [t("transfers.train.f1"), t("transfers.train.f2"), t("transfers.train.f3")],
+      price: t("tours.from") + " $20",
+    },
+  ];
+
+  const routes = [
+    { from: t("city.tashkent"), to: t("city.samarkand"), duration: "4 ч", price: "$120" },
+    { from: t("city.samarkand"), to: t("city.bukhara"), duration: "3.5 ч", price: "$100" },
+    { from: t("city.bukhara"), to: t("city.khiva"), duration: "6 ч", price: "$180" },
+    { from: t("city.tashkent"), to: t("city.bukhara"), duration: "6 ч", price: "$200" },
+    { from: t("city.tashkent") + " Airport", to: "City Center", duration: "30 мин", price: "$25" },
+    { from: t("city.samarkand") + " Airport", to: "City Center", duration: "20 мин", price: "$20" },
+  ];
+
   return (
     <Layout>
       {/* Hero */}
@@ -50,14 +53,13 @@ const Transfers = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Travel in Comfort
+              {t("transfers.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Private Transfers
+              {t("transfers.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Reliable, comfortable transportation across Uzbekistan. 
-              Modern vehicles, professional drivers, and door-to-door service.
+              {t("transfers.description")}
             </p>
           </motion.div>
         </div>
@@ -104,11 +106,10 @@ const Transfers = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-serif font-semibold text-foreground mb-4">
-              Popular Routes
+              {t("transfers.popular")}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Fixed prices, no hidden fees. All transfers include comfortable 
-              air-conditioned vehicles and English-speaking drivers.
+              {t("transfers.popularDesc")}
             </p>
           </motion.div>
 
@@ -141,7 +142,7 @@ const Transfers = () => {
           <div className="text-center mt-12">
             <Button variant="premium" size="lg" asChild>
               <Link to="/contact">
-                Book a Transfer
+                {t("transfers.bookTransfer")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -156,28 +157,28 @@ const Transfers = () => {
             <div className="text-center">
               <Shield className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="font-serif font-semibold text-foreground mb-2">
-                Safe & Insured
+                {t("transfers.safe")}
               </h3>
               <p className="text-muted-foreground text-sm">
-                All vehicles fully insured with experienced, licensed drivers.
+                {t("transfers.safeDesc")}
               </p>
             </div>
             <div className="text-center">
               <Clock className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="font-serif font-semibold text-foreground mb-2">
-                On-Time Guarantee
+                {t("transfers.onTime")}
               </h3>
               <p className="text-muted-foreground text-sm">
-                Punctuality is our priority. We track flights and adjust accordingly.
+                {t("transfers.onTimeDesc")}
               </p>
             </div>
             <div className="text-center">
               <Users className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="font-serif font-semibold text-foreground mb-2">
-                Any Group Size
+                {t("transfers.anyGroup")}
               </h3>
               <p className="text-muted-foreground text-sm">
-                From solo travelers to large groups, we have the right vehicle.
+                {t("transfers.anyGroupDesc")}
               </p>
             </div>
           </div>
