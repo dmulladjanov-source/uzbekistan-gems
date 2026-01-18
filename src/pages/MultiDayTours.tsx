@@ -3,56 +3,59 @@ import { Layout } from "@/components/Layout";
 import { Clock, MapPin, Users, Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import tourSamarkand from "@/assets/tour-samarkand.jpg";
 import tourBukhara from "@/assets/tour-bukhara.jpg";
 import heroImage from "@/assets/hero-registan.jpg";
 
-const multiDayTours = [
-  {
-    image: heroImage,
-    title: "Classic Silk Road Journey",
-    duration: "7 Days / 6 Nights",
-    cities: ["Tashkent", "Samarkand", "Bukhara", "Khiva"],
-    price: "$890",
-    highlights: [
-      "UNESCO World Heritage Sites",
-      "Expert local guides",
-      "Comfortable 4-star hotels",
-      "All transfers included",
-      "Traditional cuisine experiences",
-    ],
-  },
-  {
-    image: tourSamarkand,
-    title: "Golden Triangle Tour",
-    duration: "5 Days / 4 Nights",
-    cities: ["Tashkent", "Samarkand", "Bukhara"],
-    price: "$650",
-    highlights: [
-      "Three legendary cities",
-      "High-speed train experience",
-      "Local market visits",
-      "Silk workshop tour",
-      "Evening walking tours",
-    ],
-  },
-  {
-    image: tourBukhara,
-    title: "Complete Uzbekistan Experience",
-    duration: "10 Days / 9 Nights",
-    cities: ["Tashkent", "Fergana", "Samarkand", "Shahrisabz", "Bukhara", "Khiva"],
-    price: "$1,450",
-    highlights: [
-      "Full country exploration",
-      "Fergana Valley crafts",
-      "Mountain landscapes",
-      "Desert adventures",
-      "Premium accommodations",
-    ],
-  },
-];
-
 const MultiDayTours = () => {
+  const { t } = useLanguage();
+
+  const multiDayTours = [
+    {
+      image: heroImage,
+      title: t("multiDay.classic.title"),
+      duration: t("multiDay.classic.duration"),
+      cities: [t("city.tashkent"), t("city.samarkand"), t("city.bukhara"), t("city.khiva")],
+      price: "$890",
+      highlights: [
+        t("multiDay.classic.h1"),
+        t("multiDay.classic.h2"),
+        t("multiDay.classic.h3"),
+        t("multiDay.classic.h4"),
+        t("multiDay.classic.h5"),
+      ],
+    },
+    {
+      image: tourSamarkand,
+      title: t("multiDay.golden.title"),
+      duration: t("multiDay.golden.duration"),
+      cities: [t("city.tashkent"), t("city.samarkand"), t("city.bukhara")],
+      price: "$650",
+      highlights: [
+        t("multiDay.golden.h1"),
+        t("multiDay.golden.h2"),
+        t("multiDay.golden.h3"),
+        t("multiDay.golden.h4"),
+        t("multiDay.golden.h5"),
+      ],
+    },
+    {
+      image: tourBukhara,
+      title: t("multiDay.complete.title"),
+      duration: t("multiDay.complete.duration"),
+      cities: [t("city.tashkent"), "Фергана", t("city.samarkand"), t("city.shahrisabz"), t("city.bukhara"), t("city.khiva")],
+      price: "$1,450",
+      highlights: [
+        t("multiDay.complete.h1"),
+        t("multiDay.complete.h2"),
+        t("multiDay.complete.h3"),
+        t("multiDay.complete.h4"),
+        t("multiDay.complete.h5"),
+      ],
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero */}
@@ -65,14 +68,13 @@ const MultiDayTours = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <span className="text-sm font-medium tracking-wider uppercase text-accent">
-              Immersive Journeys
+              {t("multiDay.badge")}
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
-              Multi-Day Tours
+              {t("multiDay.title")}
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Comprehensive itineraries that take you deep into Uzbekistan's 
-              culture, history, and breathtaking landscapes.
+              {t("multiDay.description")}
             </p>
           </motion.div>
         </div>
@@ -100,7 +102,7 @@ const MultiDayTours = () => {
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-semibold">
-                        From {tour.price}
+                        {t("tours.from")} {tour.price}
                       </span>
                     </div>
                   </div>
@@ -117,7 +119,7 @@ const MultiDayTours = () => {
                       </div>
                       <div className="flex items-center text-muted-foreground">
                         <Users className="h-5 w-5 mr-2 text-accent" />
-                        Private Tour
+                        {t("tours.privateTour")}
                       </div>
                     </div>
 
@@ -145,7 +147,7 @@ const MultiDayTours = () => {
 
                     <Button variant="premium" asChild>
                       <Link to="/contact">
-                        Book This Tour
+                        {t("multiDay.bookTour")}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
