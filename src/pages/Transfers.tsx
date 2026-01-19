@@ -40,7 +40,7 @@ const Transfers = () => {
   ];
 
   const routes = [
-    { from: t("city.tashkent"), to: t("city.samarkand"), duration: "4 ч", price: "$120" },
+    { from: t("city.tashkent"), to: t("city.samarkand"), duration: "4 ч", price: "$220" },
     { from: t("city.samarkand"), to: t("city.bukhara"), duration: "3.5 ч", price: "$100" },
     { from: t("city.bukhara"), to: t("city.khiva"), duration: "6 ч", price: "$180" },
     { from: t("city.tashkent"), to: t("city.bukhara"), duration: "6 ч", price: "$200" },
