@@ -21,7 +21,7 @@ const Transfers = () => {
       title: t("transfers.city.title"),
       description: t("transfers.city.desc"),
       features: [t("transfers.city.f1"), t("transfers.city.f2"), t("transfers.city.f3")],
-      price: t("tours.from") + " $80",
+      price: t("tours.from") + " $200",
     },
     {
       icon: Train,
