@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Layout } from "@/components/Layout";
-import { Car, Plane, Train, Users, Clock, Shield, ArrowRight } from "lucide-react";
+import { Car, Plane, Train, Users, Clock, Shield, ArrowRight, Ticket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -29,6 +29,13 @@ const Transfers = () => {
       description: t("transfers.train.desc"),
       features: [t("transfers.train.f1"), t("transfers.train.f2"), t("transfers.train.f3")],
       price: t("tours.from") + " $20",
+    },
+    {
+      icon: Ticket,
+      title: t("transfers.afrosiyob.title"),
+      description: t("transfers.afrosiyob.desc"),
+      features: [t("transfers.afrosiyob.f1"), t("transfers.afrosiyob.f2"), t("transfers.afrosiyob.f3"), t("transfers.afrosiyob.f4")],
+      price: t("tours.from") + " $30",
     },
   ];
 
