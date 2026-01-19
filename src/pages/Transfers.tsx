@@ -44,7 +44,7 @@ const Transfers = () => {
     { from: t("city.samarkand"), to: t("city.bukhara"), duration: "3.5 ч", price: "$200" },
     { from: t("city.bukhara"), to: t("city.khiva"), duration: "6 ч", price: "$250" },
     { from: t("city.tashkent"), to: t("city.bukhara"), duration: "6 ч", price: "$350" },
-    { from: t("city.tashkent") + " Airport", to: "City Center", duration: "30 мин", price: "$25" },
+    { from: t("city.tashkent") + " Airport", to: "City Center", duration: "30 мин", price: "$40" },
     { from: t("city.samarkand") + " Airport", to: "City Center", duration: "20 мин", price: "$20" },
   ];
 
