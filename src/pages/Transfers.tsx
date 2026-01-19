@@ -35,7 +35,7 @@ const Transfers = () => {
       title: t("transfers.afrosiyob.title"),
       description: t("transfers.afrosiyob.desc"),
       features: [t("transfers.afrosiyob.f1"), t("transfers.afrosiyob.f2"), t("transfers.afrosiyob.f3"), t("transfers.afrosiyob.f4")],
-      price: t("tours.from") + " $30",
+      price: t("tours.from") + " $70",
     },
   ];
 
