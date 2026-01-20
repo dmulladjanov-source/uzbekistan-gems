@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.titleEnd": "of the Silk Road",
     "hero.description": "Experience the timeless beauty of Uzbekistan with personalized, premium tours crafted by local experts. From Samarkand's majestic architecture to Bukhara's ancient streets.",
     "hero.exploreTours": "Explore Tours",
-    "hero.planJourney": "Plan Your Journey",
+    "hero.planJourney": "City Tours",
     
     // Top Tours
     "tours.badge": "Popular Experiences",
@@ -225,7 +225,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.titleEnd": "Шёлкового пути",
     "hero.description": "Испытайте вечную красоту Узбекистана с персонализированными премиальными турами от местных экспертов. От величественной архитектуры Самарканда до древних улиц Бухары.",
     "hero.exploreTours": "Смотреть туры",
-    "hero.planJourney": "Спланировать поездку",
+    "hero.planJourney": "Экскурсии по городам",
     
     // Top Tours
     "tours.badge": "Популярные туры",
