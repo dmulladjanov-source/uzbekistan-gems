@@ -290,7 +290,7 @@ const translations: Record<Language, Record<string, string>> = {
     "dayTrips.description": "Идеально для путешественников с ограниченным временем. Исследуйте объекты Всемирного наследия ЮНЕСКО в Узбекистане с нашими опытными гидами.",
     "dayTrips.samarkand.title": "Самарканд: Жемчужина Шёлкового пути",
     "dayTrips.samarkand.duration": "Полный день (8-10 часов)",
-    "dayTrips.bukhara.title": "Пешеходная экскурсия по древней Бухаре",
+    "dayTrips.bukhara.title": "Однодневная экскурсия из Самарканда в Бухару и обратно на скоростных поездах.",
     "dayTrips.bukhara.duration": "Полный день (6-8 часов)",
     "dayTrips.khiva.title": "Хива: Город-музей",
     "dayTrips.khiva.duration": "Полный день (5-7 часов)",
