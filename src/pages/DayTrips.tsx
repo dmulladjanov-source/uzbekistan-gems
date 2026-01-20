@@ -27,7 +27,7 @@ const DayTrips = () => {
       location: t("city.bukhara"),
       duration: t("dayTrips.bukhara.duration"),
       groupSize: t("tours.privateTour"),
-      price: "$95",
+      price: "$170 на чел.",
       href: "/contact",
     },
     {

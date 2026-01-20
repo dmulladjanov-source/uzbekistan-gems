@@ -24,7 +24,7 @@ export function TopTours() {
       location: t("city.bukhara"),
       duration: language === "ru" ? "Полный день (6-8 часов)" : "Full Day (6-8 hours)",
       groupSize: t("tours.privateTour"),
-      price: "$95",
+      price: "$170 на чел.",
       href: "/day-trips",
     },
     {
