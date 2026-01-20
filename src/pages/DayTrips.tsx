@@ -18,7 +18,7 @@ const DayTrips = () => {
       location: t("city.samarkand"),
       duration: t("dayTrips.samarkand.duration"),
       groupSize: t("tours.privateTour"),
-      price: "$120",
+      price: "$150",
       href: "/contact",
     },
     {

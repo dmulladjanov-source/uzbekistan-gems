@@ -15,7 +15,7 @@ export function TopTours() {
       location: t("city.samarkand"),
       duration: language === "ru" ? "Полный день (8-10 часов)" : "Full Day (8-10 hours)",
       groupSize: t("tours.privateTour"),
-      price: "$120",
+      price: "$150",
       href: "/day-trips",
     },
     {
