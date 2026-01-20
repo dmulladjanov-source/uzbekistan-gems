@@ -28,28 +28,28 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-4xl mx-auto"
         >
-          <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium tracking-wider uppercase bg-accent/20 text-accent rounded-full border border-accent/30">
+          <span className="inline-block px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 text-xs sm:text-sm font-medium tracking-wider uppercase bg-accent/20 text-accent rounded-full border border-accent/30">
             {t("hero.badge")}
           </span>
           
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-semibold text-primary-foreground leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold text-primary-foreground leading-tight mb-4 sm:mb-6 px-2">
             {t("hero.title")}{" "}
             <span className="text-accent italic">{t("hero.titleAccent")}</span>{" "}
             {t("hero.titleEnd")}
           </h1>
           
-          <p className="text-lg sm:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
             {t("hero.description")}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button variant="hero" size="lg" asChild>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
+            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto min-h-[48px] text-base">
               <Link to="/multi-day-tours">
                 {t("hero.exploreTours")}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="lg" asChild>
+            <Button variant="heroOutline" size="lg" asChild className="w-full sm:w-auto min-h-[48px] text-base">
               <Link to="/contact">{t("hero.planJourney")}</Link>
             </Button>
           </div>

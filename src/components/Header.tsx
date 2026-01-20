@@ -25,12 +25,12 @@ export function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border safe-area-padding">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl md:text-3xl font-serif font-semibold text-primary">
+            <span className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-primary">
               Jam<span className="text-accent">Trips</span>
             </span>
           </Link>
@@ -69,11 +69,11 @@ export function Header() {
           </nav>
 
           {/* Mobile: Language + Menu */}
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-2">
             <LanguageSwitcher />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-foreground hover:bg-secondary rounded-md transition-colors"
+              className="p-2.5 text-foreground hover:bg-secondary rounded-md transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -91,22 +91,22 @@ export function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background border-b border-border"
           >
-            <nav className="container mx-auto px-4 py-4 flex flex-col space-y-2">
+            <nav className="container mx-auto px-4 py-3 flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-4 py-3 text-base font-medium rounded-md transition-colors ${
+                  className={`px-4 py-3.5 text-base font-medium rounded-lg transition-colors min-h-[48px] flex items-center ${
                     location.pathname === link.href
                       ? "text-primary bg-secondary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary active:bg-secondary"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button variant="premium" asChild className="mt-4">
+              <Button variant="premium" asChild className="mt-3 min-h-[48px]">
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   {t("nav.bookNow")}
                 </Link>
@@ -115,7 +115,7 @@ export function Header() {
               {/* Mobile Phone Contact */}
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                className="mt-4 flex items-center justify-center gap-3 p-4 bg-primary/10 hover:bg-primary/20 rounded-lg border border-primary/20 transition-colors"
+                className="mt-3 flex items-center justify-center gap-3 p-4 bg-primary/10 hover:bg-primary/20 active:bg-primary/25 rounded-lg border border-primary/20 transition-colors min-h-[56px]"
               >
                 <Phone className="h-5 w-5 text-primary" />
                 <span className="text-base font-semibold text-primary">{PHONE_DISPLAY}</span>
