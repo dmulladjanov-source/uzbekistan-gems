@@ -89,15 +89,15 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <span className="text-sm font-medium tracking-wider uppercase text-accent">
+            <span className="text-xs sm:text-sm font-medium tracking-wider uppercase text-accent">
               {t("contact.badge")}
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-foreground mt-3 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mt-2 sm:mt-3 mb-4 sm:mb-6">
               {t("contact.title")}
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed px-2">
               {t("contact.description")}
             </p>
           </motion.div>
@@ -108,7 +108,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="bg-card rounded-lg p-8 shadow-card space-y-6"
+            className="bg-card rounded-xl p-5 sm:p-6 md:p-8 shadow-card space-y-4 sm:space-y-6"
           >
             {isSubmitted && (
               <motion.div
@@ -204,7 +204,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
               )}
             </div>
 
-            <Button type="submit" variant="premium" size="lg" className="w-full">
+            <Button type="submit" variant="premium" size="lg" className="w-full min-h-[48px] text-base">
               <Send className="mr-2 h-5 w-5" />
               {t("contact.send")}
             </Button>

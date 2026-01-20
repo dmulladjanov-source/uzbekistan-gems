@@ -53,20 +53,20 @@ export function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
         >
-          <span className="text-sm font-medium tracking-wider uppercase text-accent">
+          <span className="text-xs sm:text-sm font-medium tracking-wider uppercase text-accent">
             {t("testimonials.badge")}
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold mt-3 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-semibold mt-2 sm:mt-3 mb-4 sm:mb-6">
             {t("testimonials.title")}
           </h2>
-          <p className="text-primary-foreground/80 text-lg leading-relaxed">
+          <p className="text-primary-foreground/80 text-base sm:text-lg leading-relaxed px-2">
             {t("testimonials.description")}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -74,28 +74,28 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-8 relative"
+              className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-5 sm:p-6 md:p-8 relative"
             >
-              <Quote className="absolute top-6 right-6 h-10 w-10 text-accent/30" />
+              <Quote className="absolute top-4 sm:top-6 right-4 sm:right-6 h-8 w-8 sm:h-10 sm:w-10 text-accent/30" />
               
-              <div className="flex items-center gap-1 mb-4">
+              <div className="flex items-center gap-0.5 sm:gap-1 mb-3 sm:mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={i}
-                    className="h-5 w-5 fill-accent text-accent"
+                    className="h-4 w-4 sm:h-5 sm:w-5 fill-accent text-accent"
                   />
                 ))}
               </div>
               
-              <p className="text-primary-foreground/90 leading-relaxed mb-6 italic">
+              <p className="text-primary-foreground/90 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 italic">
                 "{testimonial.text}"
               </p>
               
               <div>
-                <p className="font-serif font-semibold text-primary-foreground">
+                <p className="font-serif font-semibold text-primary-foreground text-sm sm:text-base">
                   {testimonial.name}
                 </p>
-                <p className="text-sm text-primary-foreground/60">
+                <p className="text-xs sm:text-sm text-primary-foreground/60">
                   {testimonial.country}
                 </p>
               </div>

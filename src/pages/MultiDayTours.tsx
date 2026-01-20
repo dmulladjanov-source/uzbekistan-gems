@@ -59,7 +59,7 @@ const MultiDayTours = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-sand-light">
+      <section className="pt-20 sm:pt-24 md:pt-32 pb-10 sm:pb-12 md:pb-16 bg-sand-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -67,13 +67,13 @@ const MultiDayTours = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="text-sm font-medium tracking-wider uppercase text-accent">
+            <span className="text-xs sm:text-sm font-medium tracking-wider uppercase text-accent">
               {t("multiDay.badge")}
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-semibold text-foreground mt-3 mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-semibold text-foreground mt-2 sm:mt-3 mb-4 sm:mb-6">
               {t("multiDay.title")}
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed px-2">
               {t("multiDay.description")}
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ const MultiDayTours = () => {
       {/* Tours */}
       <section className="section-padding bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12">
             {multiDayTours.map((tour, index) => (
               <motion.div
                 key={tour.title}
@@ -91,61 +91,64 @@ const MultiDayTours = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-card rounded-lg overflow-hidden shadow-card hover:shadow-elevated transition-shadow"
+                className="bg-card rounded-xl overflow-hidden shadow-card hover:shadow-elevated transition-shadow"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto min-h-[300px]">
+                  <div className="relative h-48 sm:h-56 md:h-64 lg:h-auto lg:min-h-[300px]">
                     <img
                       src={tour.image}
                       alt={tour.title}
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-semibold">
+                    <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                      <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-accent text-accent-foreground rounded-full text-xs sm:text-sm font-semibold">
                         {t("tours.from")} {tour.price}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-8 lg:p-10">
-                    <h2 className="text-2xl md:text-3xl font-serif font-semibold text-card-foreground mb-4">
+                  <div className="p-5 sm:p-6 md:p-8 lg:p-10">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-semibold text-card-foreground mb-3 sm:mb-4">
                       {tour.title}
                     </h2>
 
-                    <div className="flex flex-wrap gap-4 mb-6">
-                      <div className="flex items-center text-muted-foreground">
-                        <Clock className="h-5 w-5 mr-2 text-accent" />
+                    <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+                        <Clock className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-accent flex-shrink-0" />
                         {tour.duration}
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Users className="h-5 w-5 mr-2 text-accent" />
+                      <div className="flex items-center text-sm sm:text-base text-muted-foreground">
+                        <Users className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-accent flex-shrink-0" />
                         {t("tours.privateTour")}
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2 mb-6 flex-wrap">
-                      <MapPin className="h-5 w-5 text-accent flex-shrink-0" />
-                      {tour.cities.map((city, i) => (
-                        <span key={city} className="text-muted-foreground">
-                          {city}
-                          {i < tour.cities.length - 1 && " →"}
-                        </span>
-                      ))}
+                    <div className="flex items-start gap-2 mb-4 sm:mb-6 flex-wrap">
+                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0 mt-0.5" />
+                      <div className="flex flex-wrap gap-x-1 gap-y-0.5">
+                        {tour.cities.map((city, i) => (
+                          <span key={city} className="text-sm sm:text-base text-muted-foreground">
+                            {city}
+                            {i < tour.cities.length - 1 && " →"}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
-                    <ul className="space-y-2 mb-8">
+                    <ul className="space-y-1.5 sm:space-y-2 mb-6 sm:mb-8">
                       {tour.highlights.map((highlight) => (
                         <li
                           key={highlight}
-                          className="flex items-center text-muted-foreground"
+                          className="flex items-start text-sm sm:text-base text-muted-foreground"
                         >
-                          <Check className="h-5 w-5 mr-3 text-accent flex-shrink-0" />
-                          {highlight}
+                          <Check className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 text-accent flex-shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <Button variant="premium" asChild>
+                    <Button variant="premium" asChild className="w-full sm:w-auto min-h-[48px]">
                       <Link to="/contact">
                         {t("multiDay.bookTour")}
                         <ArrowRight className="ml-2 h-4 w-4" />
