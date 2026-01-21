@@ -206,6 +206,26 @@ const translations: Record<Language, Record<string, string>> = {
     "contactPage.telegramTitle": "Prefer Instant Messaging?",
     "contactPage.telegramDesc": "Reach us directly on Telegram for quick responses and real-time travel planning assistance.",
     "contactPage.telegramBtn": "Message Us on Telegram",
+
+    // Destinations
+    "destinations.title": "Destinations",
+    "destinations.subtitle": "Explore the legendary cities of the Silk Road",
+    "destinations.pageTitle": "Our Destinations",
+    "destinations.pageSubtitle": "From ancient citadels to vibrant bazaars, discover the timeless beauty of Central Asia",
+    "destinations.tashkent.name": "Tashkent",
+    "destinations.tashkent.description": "The modern capital blending Soviet grandeur with ancient traditions",
+    "destinations.samarkand.name": "Samarkand",
+    "destinations.samarkand.description": "The jewel of the Silk Road with magnificent Timurid architecture",
+    "destinations.bukhara.name": "Bukhara",
+    "destinations.bukhara.description": "A living museum of Islamic architecture and craftsmanship",
+    "destinations.khiva.name": "Khiva",
+    "destinations.khiva.description": "A perfectly preserved ancient walled city frozen in time",
+    "destinations.shahrisabz.name": "Shahrisabz",
+    "destinations.shahrisabz.description": "Birthplace of Amir Timur with stunning palace ruins",
+    "destinations.boysun.name": "Boysun",
+    "destinations.boysun.description": "UNESCO-listed cultural space with ancient traditions",
+    "destinations.derbent.name": "Derbent",
+    "destinations.derbent.description": "One of the oldest cities with a legendary fortress",
   },
   ru: {
     // Navigation
@@ -404,6 +424,26 @@ const translations: Record<Language, Record<string, string>> = {
     "contactPage.telegramTitle": "Предпочитаете мессенджер?",
     "contactPage.telegramDesc": "Свяжитесь с нами напрямую в Telegram для быстрых ответов и помощи в планировании путешествия.",
     "contactPage.telegramBtn": "Написать в Telegram",
+
+    // Destinations
+    "destinations.title": "Направления",
+    "destinations.subtitle": "Исследуйте легендарные города Шёлкового пути",
+    "destinations.pageTitle": "Наши направления",
+    "destinations.pageSubtitle": "От древних цитаделей до оживлённых базаров — откройте вечную красоту Центральной Азии",
+    "destinations.tashkent.name": "Ташкент",
+    "destinations.tashkent.description": "Современная столица, сочетающая советское величие с древними традициями",
+    "destinations.samarkand.name": "Самарканд",
+    "destinations.samarkand.description": "Жемчужина Шёлкового пути с великолепной тимуридской архитектурой",
+    "destinations.bukhara.name": "Бухара",
+    "destinations.bukhara.description": "Живой музей исламской архитектуры и ремесленничества",
+    "destinations.khiva.name": "Хива",
+    "destinations.khiva.description": "Идеально сохранившийся древний город за стенами",
+    "destinations.shahrisabz.name": "Шахрисабз",
+    "destinations.shahrisabz.description": "Родина Амира Тимура с потрясающими руинами дворцов",
+    "destinations.boysun.name": "Бойсун",
+    "destinations.boysun.description": "Культурное пространство ЮНЕСКО с древними традициями",
+    "destinations.derbent.name": "Дербент",
+    "destinations.derbent.description": "Один из древнейших городов с легендарной крепостью",
   },
 };
 
