@@ -42,15 +42,15 @@ export function HeroSection() {
             {t("hero.description")}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0">
-            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto min-h-[48px] text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full px-4 sm:px-0">
+            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] text-base sm:text-lg px-6 sm:px-8 rounded-xl">
               <Link to="/multi-day-tours">
                 {t("hero.exploreTours")}
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button variant="heroOutline" size="lg" asChild className="w-full sm:w-auto min-h-[48px] text-base">
-              <Link to="/contact">{t("hero.planJourney")}</Link>
+            <Button variant="heroOutline" size="lg" asChild className="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] text-base sm:text-lg px-6 sm:px-8 rounded-xl">
+              <Link to="/day-trips">{t("hero.planJourney")}</Link>
             </Button>
           </div>
         </motion.div>
